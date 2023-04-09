@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ConsulterRdvController">
+    <stylesheets>
+        <URL value="@consulterrdv.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableView" layoutX="62.0" layoutY="25.0" prefHeight="294.0" prefWidth="472.0">
+        <columns>
+          <TableColumn fx:id="dateID" prefWidth="130.0" text="Date" />
+          <TableColumn fx:id="medecinID" prefWidth="116.0" text="Medecin" />
+            <TableColumn fx:id="etatID" prefWidth="94.0" text="Etat" />
+            <TableColumn fx:id="descriptionID" prefWidth="107.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button fx:id="backID" layoutX="30.0" layoutY="338.0" mnemonicParsing="false" onAction="#backToMainPage" text="Back" />
+   </children>
+</AnchorPane>
