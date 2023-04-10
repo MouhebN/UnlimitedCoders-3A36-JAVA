@@ -41,10 +41,6 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = prenom;
     }
-
-   
-     
-
     public Utilisateur() {
     }
 

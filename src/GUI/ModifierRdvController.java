@@ -141,8 +141,5 @@ public class ModifierRdvController implements Initializable {
         window.show();
     }
 
-    @FXML
-    private void ModifierRdv(ActionEvent event) {
-    }
 
 }

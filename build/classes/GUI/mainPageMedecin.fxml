@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.MainPageMedecinController">
+    <stylesheets>
+        <URL value="@mainpagemedecin.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="indiquerID" layoutX="150.0" layoutY="175.0" mnemonicParsing="false" text="Indiquer Dispo" />
+      <Button fx:id="consulterID" layoutX="315.0" layoutY="175.0" mnemonicParsing="false" text="Consulter Dispo" />
+   </children>
+</AnchorPane>

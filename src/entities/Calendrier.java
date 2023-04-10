@@ -5,6 +5,7 @@
  */
 package entities;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 /**
@@ -13,9 +14,11 @@ import java.time.LocalDateTime;
  */
 public class Calendrier {
    private int id ; 
-   private LocalDateTime heure_debut ;
-   private LocalDateTime heure_fin ;
+   private Timestamp heure_debut ;
+   private Timestamp heure_fin ;
    private Utilisateur medecin ; 
+
+  
 
     public int getId() {
         return id;
@@ -25,19 +28,19 @@ public class Calendrier {
         this.id = id;
     }
 
-    public LocalDateTime getHeure_debut() {
+    public Timestamp getHeure_debut() {
         return heure_debut;
     }
 
-    public void setHeure_debut(LocalDateTime heure_debut) {
+    public void setHeure_debut(Timestamp heure_debut) {
         this.heure_debut = heure_debut;
     }
 
-    public LocalDateTime getHeure_fin() {
+    public Timestamp getHeure_fin() {
         return heure_fin;
     }
 
-    public void setHeure_fin(LocalDateTime heure_fin) {
+    public void setHeure_fin(Timestamp heure_fin) {
         this.heure_fin = heure_fin;
     }
 
@@ -52,20 +55,27 @@ public class Calendrier {
     public Calendrier() {
     }
 
-    public Calendrier(LocalDateTime heure_debut, LocalDateTime heure_fin, Utilisateur medecin) {
+    public Calendrier(Timestamp heure_debut, Timestamp heure_fin, Utilisateur medecin) {
         this.heure_debut = heure_debut;
         this.heure_fin = heure_fin;
         this.medecin = medecin;
     }
     
 
-    public Calendrier(int id, LocalDateTime heure_debut, LocalDateTime heure_fin, Utilisateur medecin) {
+    public Calendrier(int id, Timestamp heure_debut, Timestamp heure_fin, Utilisateur medecin) {
         this.id = id;
         this.heure_debut = heure_debut;
         this.heure_fin = heure_fin;
         this.medecin = medecin;
     }
+    public Calendrier(Utilisateur medecin, Timestamp heure_debut, Timestamp heure_fin) {
+        
+        this.heure_debut = heure_debut;
+        this.heure_fin = heure_fin;
+        this.medecin = medecin;
+    }
 
+    
     @Override
     public String toString() {
         return "Calendrier{" + "id=" + id + ", heure_debut=" + heure_debut + ", heure_fin=" + heure_fin + ", medecin=" + medecin + '}';
