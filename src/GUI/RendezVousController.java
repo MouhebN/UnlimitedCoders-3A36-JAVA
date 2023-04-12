@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import ressources.SoundPlayer;
 import entities.RendezVous;
 import entities.Utilisateur;
+import java.io.File;
 import java.io.IOException;
 import static java.lang.Math.E;
 import java.net.URL;
@@ -38,9 +40,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import services.RendezVousCrud;
 import services.UtilisateurCrud;
+import ressources.SoundPlayer;
+
+
 
 /**
  * FXML Controller class
@@ -119,19 +126,24 @@ public class RendezVousController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Etat and description fields cannot be empty!");
             alert.showAndWait();
-            
+
+        } else if (rdc.isRdvAlreadyReserved(medecin.getId(), date)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("This date and time are already reserved for the selected doctor!");
+            alert.showAndWait();
+
         } else {
-            if (rdc.isRdvAlreadyReserved(medecin.getId(), date)) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("This date and time are already reserved for the selected doctor!");
-                alert.showAndWait(); 
-                
-            }else{          
             RendezVous rdv = new RendezVous(date, medecin, patient, description, etat);
             rdc.ajouterRdv2(rdv);
-            }
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setContentText("Rendez-vous ajouté avec succès!");
+            alert.showAndWait();
+            
+           /* SoundPlayer soundPlayer = new SoundPlayer();
+            soundPlayer.playSound();*/
         }
     }
 

@@ -6,19 +6,15 @@
 package services;
 
 import entities.Calendrier;
-import entities.RendezVous;
 import entities.Utilisateur;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import static services.RendezVousCrud.cnx2;
 import util.Connexion;
 
 /**
@@ -61,8 +57,9 @@ public class CalendrierCrud {
             while (rs.next()) {
                 Calendrier cal = new Calendrier();
                 cal.setId(rs.getInt(1));
-                cal.setHeure_debut(Timestamp.valueOf(rs.getObject("heure_debut", LocalDateTime.class)));
-                cal.setHeure_fin(Timestamp.valueOf(rs.getObject("heure_fin", LocalDateTime.class)));
+                cal.setHeure_debut(rs.getTimestamp("heure_debut"));
+                cal.setHeure_fin(rs.getTimestamp("heure_fin"));
+
                 Utilisateur medecin = new Utilisateur(rs.getInt("utilisateur_id"));
                 cal.setMedecin(medecin);
                 myList.add(cal);
@@ -104,6 +101,25 @@ public class CalendrierCrud {
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+
+    public List<Calendrier> getDispoByMedecinId(int medecinId) throws SQLException {
+        List<Calendrier> calendrierList = new ArrayList<>();
+        String query = "SELECT * FROM calendrier WHERE utilisateur_id = ?";
+        try (PreparedStatement statement = cnx2.prepareStatement(query)) {
+
+            statement.setInt(1, medecinId);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                Timestamp debut = rs.getTimestamp("heure_debut");
+                Timestamp fin = rs.getTimestamp("heure_fin");
+                Utilisateur medecin = new Utilisateur(rs.getInt("utilisateur_id"));
+                Calendrier calendrier = new Calendrier(id, debut, fin, medecin);
+                calendrierList.add(calendrier);
+            }
+            return calendrierList;
         }
     }
 

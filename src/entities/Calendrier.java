@@ -6,19 +6,17 @@
 package entities;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 /**
  *
  * @author L390
  */
 public class Calendrier {
-   private int id ; 
-   private Timestamp heure_debut ;
-   private Timestamp heure_fin ;
-   private Utilisateur medecin ; 
 
-  
+    private int id;
+    private Timestamp heure_debut;
+    private Timestamp heure_fin;
+    private Utilisateur medecin;
 
     public int getId() {
         return id;
@@ -60,7 +58,6 @@ public class Calendrier {
         this.heure_fin = heure_fin;
         this.medecin = medecin;
     }
-    
 
     public Calendrier(int id, Timestamp heure_debut, Timestamp heure_fin, Utilisateur medecin) {
         this.id = id;
@@ -68,18 +65,30 @@ public class Calendrier {
         this.heure_fin = heure_fin;
         this.medecin = medecin;
     }
+
     public Calendrier(Utilisateur medecin, Timestamp heure_debut, Timestamp heure_fin) {
-        
+
         this.heure_debut = heure_debut;
         this.heure_fin = heure_fin;
         this.medecin = medecin;
     }
 
-    
+    public Calendrier(int id, Timestamp heure_debut, Timestamp heure_fin) {
+        this.id = id;
+        this.heure_debut = heure_debut;
+        this.heure_fin = heure_fin;
+    }
+
+    public Calendrier(Timestamp heure_debut, Timestamp heure_fin) {
+        this.heure_debut = heure_debut;
+        this.heure_fin = heure_fin;
+    }
+
     @Override
     public String toString() {
-        return "Calendrier{" + "id=" + id + ", heure_debut=" + heure_debut + ", heure_fin=" + heure_fin + ", medecin=" + medecin + '}';
+        return "Calendrier{" + "id=" + id + ", heure_debut=" + heure_debut + ", heure_fin=" + heure_fin + '}';
     }
-   
-    
+
+  
+
 }

@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import static services.RendezVousCrud.cnx2;
 import util.Connexion;
 
 /**
@@ -70,13 +69,10 @@ public class UtilisateurCrud {
                 Utilisateur medecin = new Utilisateur();
                 medecin.setId(rs.getInt("id"));
                 medecin.setNom(rs.getString("nom"));
-                medecin.setPrenom(rs.getString("prenom"));
-                
+                medecin.setPrenom(rs.getString("prenom"));           
                 return medecin;
             }
         }
         return null;
     }
-
-
 }

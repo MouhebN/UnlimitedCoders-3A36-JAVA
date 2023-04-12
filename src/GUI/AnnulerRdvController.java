@@ -108,8 +108,9 @@ public class AnnulerRdvController implements Initializable {
                                     rendezVousCrud.supprimerRdv(rendezVous.getId());
                                     rdvsID.getItems().remove(rendezVous);
                                 }
-                            });
 
+                            });
+                        
                         }
                         //// updating the graphical representation of the cell.
 
@@ -134,6 +135,7 @@ public class AnnulerRdvController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
     @FXML
     private void backToMainPage(ActionEvent event) throws IOException {
         Parent mainPageParent = FXMLLoader.load(getClass().getResource("MainPage.fxml"));

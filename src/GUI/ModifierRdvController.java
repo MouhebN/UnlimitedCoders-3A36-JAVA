@@ -95,7 +95,7 @@ public class ModifierRdvController implements Initializable {
         String etat = etatID.getText();
         String description = descriptionID.getText();
         LocalDate localDate = dateID.getValue();
-        LocalTime localTime = timeID.getValue() ;
+        LocalTime localTime = timeID.getValue();
         LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
         Instant instant = Instant.from(localDateTime.atZone(ZoneId.systemDefault()));
         Timestamp date = Timestamp.from(instant);
@@ -128,6 +128,10 @@ public class ModifierRdvController implements Initializable {
         } else {
 
             rdc.modifierRdv2(rdvid, date, patient, etat, description);
+              Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setContentText("Rendez-vous modifié avec succès!");
+            alert.showAndWait();
         }
 
     }
@@ -140,6 +144,5 @@ public class ModifierRdvController implements Initializable {
         window.setScene(mainPageScene);
         window.show();
     }
-
 
 }

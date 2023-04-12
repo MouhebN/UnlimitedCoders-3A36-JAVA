@@ -28,6 +28,8 @@ public class MainPageMedecinController implements Initializable {
     private Button indiquerID;
     @FXML
     private Button consulterID;
+    @FXML
+    private Button modifierDispoID;
 
     /**
      * Initializes the controller class.
@@ -49,6 +51,19 @@ public class MainPageMedecinController implements Initializable {
          consulterID.setOnAction((event) -> {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ConsulterDispo.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    } catch (IOException ex) {
+        System.out.println(ex.getMessage());
+        System.out.println("the problem is here");
+    }
+});
+         modifierDispoID.setOnAction((event) -> {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierDisponibilite.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

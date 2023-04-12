@@ -11,12 +11,12 @@
         <URL value="@consulterdispo.css" />
     </stylesheets>
    <children>
-      <TableView layoutX="20.0" layoutY="90.0" prefHeight="200.0" prefWidth="551.0">
+      <TableView fx:id="tableID" layoutX="20.0" layoutY="90.0" prefHeight="200.0" prefWidth="424.0">
         <columns>
-          <TableColumn fx:id="startdadteID" prefWidth="150.0" text="Start Date" />
-          <TableColumn fx:id="endID" prefWidth="138.0" text="End Date" />
-            <TableColumn fx:id="modifierID" prefWidth="134.0" text="Modifier" />
-            <TableColumn fx:id="supprimerID" prefWidth="128.0" text="Supprimer" />
+            <TableColumn fx:id="dispoID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="startdadteID" prefWidth="121.0" text="Start Date" />
+          <TableColumn fx:id="endID" prefWidth="150.0" text="End Date" />
+            <TableColumn fx:id="deleteID" prefWidth="75.0" text="Supprimer" />
         </columns>
       </TableView>
       <Button fx:id="backID" layoutX="33.0" layoutY="340.0" mnemonicParsing="false" onAction="#backToMainPage" text="Back" />

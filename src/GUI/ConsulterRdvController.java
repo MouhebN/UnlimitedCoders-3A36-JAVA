@@ -64,7 +64,7 @@ public class ConsulterRdvController implements Initializable {
             medecinID.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getMedecin().getNom() + " " + cellData.getValue().getMedecin().getPrenom()));
             etatID.setCellValueFactory(new PropertyValueFactory<>("etat"));
             descriptionID.setCellValueFactory(new PropertyValueFactory<>("description"));
-            
+
             // Populate table with data
             UtilisateurCrud utilisateurCrud = new UtilisateurCrud();
             Utilisateur patient = utilisateurCrud.getPatientById(8);
@@ -75,9 +75,9 @@ public class ConsulterRdvController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(ConsulterRdvController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
 
-     @FXML
+    @FXML
     private void backToMainPage(ActionEvent event) throws IOException {
         Parent mainPageParent = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene mainPageScene = new Scene(mainPageParent);
@@ -87,5 +87,5 @@ public class ConsulterRdvController implements Initializable {
         window.setScene(mainPageScene);
         window.show();
     }
-    
+
 }
