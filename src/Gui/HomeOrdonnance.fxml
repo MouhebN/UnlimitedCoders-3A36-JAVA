@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeOrdonnanceController">
+   <children>
+      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="543.0" prefWidth="993.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ajouter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnAjouter" layoutX="451.0" layoutY="412.0" mnemonicParsing="false" onAction="#btnAjouter" style="-fx-background-color: #0066FF;" text="Ajouter">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="252.0" layoutY="109.0" prefHeight="32.0" prefWidth="174.0" text="Identifiant Consultation">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="validiteText" layoutX="416.0" layoutY="156.0" />
+                        <Label layoutX="252.0" layoutY="153.0" prefHeight="32.0" prefWidth="131.0" text="Validite">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="idConsultationText" layoutX="456.0" layoutY="112.0" prefHeight="26.0" prefWidth="81.0" />
+                        <Label layoutX="252.0" layoutY="193.0" text="Medicament">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="medicamentText" layoutX="422.0" layoutY="201.0" prefWidth="150.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Afficher">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ordonnanceTable" layoutX="26.0" layoutY="36.0" prefHeight="414.0" prefWidth="934.0" style="-fx-background-color: #D5E0F2;">
+                          <columns>
+                            <TableColumn fx:id="idColonne" prefWidth="121.0" text="Identifiant" />
+                            <TableColumn fx:id="consultationColonne" prefWidth="171.0" text="Consultation" />
+                              <TableColumn fx:id="validiteColonne" prefWidth="300.0" text="Validite (Jours)" />
+                              <TableColumn fx:id="medicamentColonne" prefWidth="341.0" text="Medicament(s)" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnSupprimer" layoutX="632.0" layoutY="472.0" mnemonicParsing="false" onAction="#btnSupprimer" style="-fx-background-color: #0066FF;" text="Supprimer" />
+                        <Button fx:id="btnModifier" layoutX="762.0" layoutY="472.0" mnemonicParsing="false" onAction="#btnModifier" style="-fx-background-color: #0066FF;" text="Modifier" />
+                        <Button fx:id="btnPdf" layoutX="32.0" layoutY="466.0" mnemonicParsing="false" onAction="#btnPdf" style="-fx-background-color: #e51818;" text="PDF" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnRetour" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnRetour" style="-fx-background-color: #0066FF;" text="Retour" />
+      <Label layoutX="429.0" layoutY="9.0" prefWidth="156.0" text="Ordonnance">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
