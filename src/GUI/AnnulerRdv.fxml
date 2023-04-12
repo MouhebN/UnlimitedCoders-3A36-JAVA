@@ -2,18 +2,24 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AnnulerRdvController">
     <stylesheets>
         <URL value="@annulerrdv.css" />
     </stylesheets>
    <children>
-      <Label layoutX="253.0" layoutY="24.0" text="Vos RendezVous" />
-      <TableView fx:id="rdvsID" layoutX="53.0" layoutY="51.0" prefHeight="286.0" prefWidth="527.0">
+         <ImageView fitHeight="400" fitWidth="600">
+            <image>
+                <Image url="./ressources/annuler.jpg" />
+            </image>
+        </ImageView>
+      <TableView fx:id="rdvsID" layoutX="26.0" layoutY="57.0" prefHeight="286.0" prefWidth="527.0">
         <columns>
             <TableColumn fx:id="rdvID" prefWidth="55.0" text="ID" />
             <TableColumn fx:id="dateColumn" prefWidth="149.0" text="Date" />
@@ -22,5 +28,6 @@
         </columns>
       </TableView>
       <Button fx:id="backID" layoutX="26.0" layoutY="350.0" mnemonicParsing="false" onAction="#backToMainPage" text="Back" />
+      <BorderPane prefHeight="55.0" prefWidth="600.0" />
    </children>
 </AnchorPane>

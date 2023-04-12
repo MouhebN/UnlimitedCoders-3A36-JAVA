@@ -10,6 +10,7 @@ import entities.RendezVous;
 import entities.Utilisateur;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import services.CalendrierCrud;
@@ -47,11 +48,12 @@ public class HealthifiedPi {
         //   rdc.modifierRdv(159, new Date (1636712200030L), Medecin, Patient, "Urgent", "olaaa ");
         //  System.out.println(rdc.afficherRendezvouses());
         ///               Ajouter Dispo      /////
-        /*   Utilisateur medecin = new Utilisateur(6);
-            LocalDateTime heureDebut = LocalDateTime.of(2023, 3, 11, 8, 30);
-            LocalDateTime heureFin = LocalDateTime.of(2023, 3, 11, 10, 0);
-            Calendrier calendrier = new Calendrier( heureDebut, heureFin,medecin);
-            cal.ajouterDispo(calendrier);*/
+      /*  Utilisateur medecin = new Utilisateur(6);
+        Timestamp heureDebut = Timestamp.valueOf(LocalDateTime.of(2023, 3, 11, 8, 30));
+        Timestamp heureFin = Timestamp.valueOf(LocalDateTime.of(2023, 3, 11, 10, 0));
+        Calendrier calendrier = new Calendrier(heureDebut, heureFin, medecin);
+        cal.ajouterDispo(calendrier);*/
+
         ////////////////////////////////////////
         // call the afficherDispo(id) function
         /* List<Calendrier> disponibilites = cal.afficherDispo(6);
@@ -64,6 +66,5 @@ public class HealthifiedPi {
         //////////////////////////////
         ////         Modifier Dispo by id           ////
         // cal.modifierDispo(72, LocalDateTime.of(2023, Month.APRIL, 4, 9, 0), LocalDateTime.of(2023, Month.APRIL, 4, 11, 0));
-        
     }
 }

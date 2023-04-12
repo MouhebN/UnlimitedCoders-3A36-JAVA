@@ -32,6 +32,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.RendezVousCrud;
@@ -58,6 +59,16 @@ public class ModifierRdvController implements Initializable {
     private Button BackTomainID;
     @FXML
     private ComboBox<LocalTime> timeID;
+    @FXML
+    private Label rdvLabel;
+    @FXML
+    private Label etatLabel;
+    @FXML
+    private Label descriptionLabel;
+    @FXML
+    private Label dateLabel;
+    @FXML
+    private Label timeLabel;
 
     /**
      * Initializes the controller class.

@@ -3,17 +3,29 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainPageController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainPageController">
     <stylesheets>
         <URL value="@mainpage.css" />
     </stylesheets>
-   <children>
-      <Button fx:id="ReserverID" layoutX="80.0" layoutY="120.0" mnemonicParsing="false" text="Réserver" />
-      <Button fx:id="ModifierID" layoutX="203.0" layoutY="120.0" mnemonicParsing="false" text="Modifier" />
-      <Button fx:id="AnnulerID" layoutX="320.0" layoutY="120.0" mnemonicParsing="false" text="Annuler" />
-      <Button fx:id="AfficherID" layoutX="430.0" layoutY="120.0" mnemonicParsing="false" text="Consulter" />
-      <Label fx:id="titleID" layoutX="225.0" layoutY="33.0" prefHeight="50.0" prefWidth="190.0" styleClass="title-label" text="Healthified" />
-   </children>
+    <children>
+        <ImageView fitWidth="600" fitHeight="400">
+            <image>
+                <Image url="./ressources/background.jpg" />
+            </image>
+        </ImageView>
+        <HBox alignment="CENTER" layoutX="0.0" layoutY="20.0" prefWidth="600.0">
+                   <Label fx:id="titleID" prefWidth="150" text="Healthified" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="0.0" layoutY="200.0" prefWidth="600.0" spacing="15.0">
+             <Button fx:id="ReserverID" mnemonicParsing="false" text="Réserver" style="-fx-background-color: gray; -fx-text-fill: white;"/>
+                <Button fx:id="ModifierID" mnemonicParsing="false" text="Modifier" style="-fx-background-color: gray; -fx-text-fill: white;"/>
+                <Button fx:id="AnnulerID" mnemonicParsing="false" text="Annuler" style="-fx-background-color: gray; -fx-text-fill: white;"/>
+                <Button fx:id="AfficherID" mnemonicParsing="false" text="Consulter" style="-fx-background-color: gray; -fx-text-fill: white;"/>
+        </HBox>
+    </children>
 </AnchorPane>

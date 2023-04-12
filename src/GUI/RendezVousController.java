@@ -70,6 +70,16 @@ public class RendezVousController implements Initializable {
     private Button backID;
     @FXML
     private ComboBox<LocalTime> timeID;
+    @FXML
+    private Label medecinLabel;
+    @FXML
+    private Label etatLabel;
+    @FXML
+    private Label descriptionLabel;
+    @FXML
+    private Label dateLabel;
+    @FXML
+    private Label timeLabel;
 
     /**
      * Initializes the controller class.

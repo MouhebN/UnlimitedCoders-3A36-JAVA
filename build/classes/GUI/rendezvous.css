@@ -1,37 +1,35 @@
-/*
- * Empty Stylesheet file.
- */
-
+/* Style the text fields */
 .mainFxmlClass {
+.text-field {
+    -fx-prompt-text-fill: red;
+    -fx-background-color: #F8F8F8;
+    -fx-border-color: #A9A9A9;
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
 
-    /* Style the text fields */
-    .text-field {
-        -fx-prompt-text-fill: gray;
-        -fx-background-color: #F8F8F8;
-        -fx-border-color: #A9A9A9;
-    }
+/* Style the date picker */
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
 
-    /* Style the date picker */
-    .date-picker {
-        -fx-font-size: 14px;
-    }
+/* Style the combo box */
+.combo-box {
+    -fx-font-size: 14px;
+    -fx-background-color: #F8F8F8;
+    -fx-border-color: #A9A9A9;
+    -fx-text-fill: #000000;
+}
 
-    /* Style the combo box */
-    .combo-box {
-        -fx-font-size: 14px;
-        -fx-background-color: #F8F8F8;
-        -fx-border-color: #A9A9A9;
-    }
-
-    /* Style the button */
-   .button {
+/* Style the button */
+.button {
     -fx-font-size: 14px;
     -fx-background-color: #0099FF;
     -fx-text-fill: white;
 }
 
-
-    #backID {
+#backID {
     -fx-font-size: 14px;
     -fx-background-color: #A9A9A9;
     -fx-text-fill: white;
@@ -47,16 +45,19 @@
     -fx-translate-y: 5;
     -fx-background-color: #808080;
 }
-    /* Style the error message */
-    .error-message {
-        -fx-font-size: 14px;
-        -fx-text-fill: red;
-    }
 
-    /* Style the root pane */
-    .root {
-        -fx-background-color: #FFFFFF;
-    }
-
+/* Style the error message */
+.error-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: red;
 }
 
+/* Style the root pane */
+.root {
+    -fx-background-color: #FFFFFF;
+}
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+}
