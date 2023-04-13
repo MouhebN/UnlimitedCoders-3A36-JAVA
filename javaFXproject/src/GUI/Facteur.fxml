@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.FacteurController">
+    <stylesheets>
+        <URL value="@facteur.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tfnom" layoutX="204.0" layoutY="53.0" />
+      <TextField fx:id="tfprenom" layoutX="204.0" layoutY="94.0" />
+      <TextField fx:id="tfidpatient" layoutX="205.0" layoutY="135.0" />
+      <TextField fx:id="tfidmedicament" layoutX="205.0" layoutY="180.0" />
+      <TextField fx:id="tfnommed" layoutX="204.0" layoutY="227.0" />
+      <TextField fx:id="tfdosage" layoutX="204.0" layoutY="276.0" />
+      <TextField fx:id="tfcin" layoutX="205.0" layoutY="14.0" />
+      <TextField fx:id="tfprix" layoutX="205.0" layoutY="322.0" />
+      <Label layoutX="68.0" layoutY="18.0" text="cin" />
+      <Label layoutX="68.0" layoutY="57.0" text="nom" />
+      <Label layoutX="68.0" layoutY="98.0" text="prenom" />
+      <Label layoutX="68.0" layoutY="139.0" text="id_patient" />
+      <Label layoutX="68.0" layoutY="184.0" text="id_medicament" />
+      <Label layoutX="68.0" layoutY="231.0" text="nom_med" />
+      <Label layoutX="68.0" layoutY="280.0" text="dosage" />
+      <Label layoutX="68.0" layoutY="326.0" text="prix" />
+      <Button fx:id="tfsave" layoutX="429.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveFacteur" text="save" />
+   </children>
+</AnchorPane>
