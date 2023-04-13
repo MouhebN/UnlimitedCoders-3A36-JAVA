@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox styleClass="window-background" stylesheets="@/Esprit/resources/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Esprit.MainGui.Admin.AjoutArticle">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="847.0" spacing="20.0" styleClass="content-background" stylesheets="@/Esprit/resources/styles.css" VBox.vgrow="ALWAYS">
+            <children>
+                <Label styleClass="title-text-dialog-2" text="Ajouter Un Article " />
+                <Separator prefHeight="5.0" prefWidth="845.0" />
+                <JFXTabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+                    <tabs>
+                        <Tab fx:id="healthCondTab" text="Article">
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <VBox alignment="TOP_CENTER" prefHeight="847.0" spacing="20.0" styleClass="content-background" stylesheets="@/Esprit/resources/styles.css">
+                                            <children>
+                                                <VBox prefWidth="100.0" spacing="10.0" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Titre" />
+
+                                                        <TextArea fx:id="titre" prefHeight="60.0" promptText="Taper Le titre " styleClass="text-field-no-edit" stylesheets="@/Esprit/resources/listview_styles_2.css" wrapText="true" />
+
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </VBox>
+                                                <VBox prefWidth="100.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Contenu :" />
+                                                        <TextArea fx:id="descP" prefHeight="60.0" promptText="Taper le Contenu " styleClass="text-field-no-edit" stylesheets="@/Esprit/resources/listview_styles_2.css" wrapText="true" />
+                                                    </children>
+                                                </VBox>
+                                                <VBox prefWidth="100.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Date" />
+                                                        <DatePicker styleClass="text-box-header" fx:id="date" />
+                                                    </children>
+                                                </VBox>
+
+                                                <VBox prefWidth="100.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Nombre Like :" />
+                                                        <TextArea fx:id="nblike" prefHeight="60.0" promptText="Taper Nbre Like " styleClass="text-field-no-edit" stylesheets="@/Esprit/resources/listview_styles_2.css" wrapText="true" />
+                                                    </children>
+                                                </VBox>
+
+                                                <VBox prefWidth="100.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Nombre DisLike :" />
+                                                        <TextArea fx:id="nbdislike" prefHeight="60.0" promptText="Taper nbre Dislike " styleClass="text-field-no-edit" stylesheets="@/Esprit/resources/listview_styles_2.css" wrapText="true" />
+                                                    </children>
+                                                </VBox>
+                                                <VBox prefWidth="100.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="text-box-header" text="Nombre Comments :" />
+                                                        <TextArea fx:id="cmn" prefHeight="60.0" promptText="Taper Nbre Comments " styleClass="text-field-no-edit" stylesheets="@/Esprit/resources/listview_styles_2.css" wrapText="true" />
+                                                    </children>
+                                                </VBox>
+
+
+                                                <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <JFXButton maxWidth="1920.0"  prefHeight="50.0" onAction="#Ajouter" prefWidth="843.0" styleClass="button-primary-small" text="Ajouter " />
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
+                                            </padding>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+
+
+
+
+                    </tabs>
+                </JFXTabPane>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+            </padding>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+        </VBox>
+    </children>
+</VBox>
