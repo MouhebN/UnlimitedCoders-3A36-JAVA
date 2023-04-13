@@ -4,7 +4,7 @@
  */
 package entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,22 +12,48 @@ import java.util.Date;
  */
 public class Remboursement {  
     
-    private int idRemboursement;
+    private int idRemboursement, idDepot;
     private String reponse;
-    private Date DateRemboursement;
+    private LocalDate DateRemboursement;
     private float montantRembourse;
 
-    public Remboursement(int idRemboursement, String reponse, Date DateRemboursement, float montantRembourse) {
+    public Remboursement(int idRemboursement) {
+        this.idRemboursement = idRemboursement;
+    }
+    
+    
+
+    public Remboursement(int idRemboursement, int idDepot, String reponse, LocalDate DateRemboursement, float montantRembourse) {
+        this.idRemboursement = idRemboursement;
+        this.idDepot = idDepot;
+        this.reponse = reponse;
+        this.DateRemboursement = DateRemboursement;
+        this.montantRembourse = montantRembourse;
+    }
+    
+    public Remboursement(LocalDate DateRemboursement,String reponse, float montantRembourse, int idDepot) {
+        this.idDepot = idDepot;
+        this.reponse = reponse;
+        this.DateRemboursement = DateRemboursement;
+        this.montantRembourse = montantRembourse;
+    }
+    
+    
+
+    public Remboursement(int idRemboursement, String reponse, LocalDate DateRemboursement, float montantRembourse) {
         this.idRemboursement = idRemboursement;
         this.reponse = reponse;
         this.DateRemboursement = DateRemboursement;
         this.montantRembourse = montantRembourse;
     }
 
-    public Remboursement(String reponse, Date DateRemboursement, float montantRembourse) {
+    public Remboursement(String reponse, LocalDate DateRemboursement, float montantRembourse) {
         this.reponse = reponse;
         this.DateRemboursement = DateRemboursement;
         this.montantRembourse = montantRembourse;
+    }
+
+    public Remboursement() {
     }
 
     public int getIdRemboursement() {
@@ -46,11 +72,11 @@ public class Remboursement {
         this.reponse = reponse;
     }
 
-    public Date getDateRemboursement() {
+    public LocalDate getDateRemboursement() {
         return DateRemboursement;
     }
 
-    public void setDateRemboursement(Date DateRemboursement) {
+    public void setDateRemboursement(LocalDate DateRemboursement) {
         this.DateRemboursement = DateRemboursement;
     }
 
@@ -62,9 +88,17 @@ public class Remboursement {
         this.montantRembourse = montantRembourse;
     }
 
+    public int getIdDepot() {
+        return idDepot;
+    }
+
+    public void setIdDepot(int idDepot) {
+        this.idDepot = idDepot;
+    }
+
     @Override
     public String toString() {
-        return "Remboursement{" + "idRemboursement=" + idRemboursement + ", reponse=" + reponse + ", DateRemboursement=" + DateRemboursement + ", montantRembourse=" + montantRembourse + '}';
-    }  
+        return "Remboursement{" + "idRemboursement=" + idRemboursement + ", idDepot=" + idDepot + ", reponse=" + reponse + ", DateRemboursement=" + DateRemboursement + ", montantRembourse=" + montantRembourse + '}';
+    }
     
 }

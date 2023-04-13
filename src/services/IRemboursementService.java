@@ -5,10 +5,21 @@
  */
 package services;
 
+import java.util.List;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author asus
  */
-public interface IRemboursementService {
+public interface IRemboursementService<R> {
+
+    public Boolean ajouter(R r);
+
+    public Boolean supprimer(R r);
+
+    public Boolean modifier(R r);
+    
+    public ObservableList<R> afficher();
     
 }
