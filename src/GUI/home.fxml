@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+   <children>
+      <Button fx:id="ajouterproduit" layoutX="110.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#ajouterproduit" text="ajouter produit" />
+      <Button fx:id="ajoutercat" layoutX="377.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#ajoutercat" text="ajouter categorie" />
+      <Button fx:id="ajoutercomm" layoutX="232.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#ajoutercomm" text="ajouter commande" />
+      <Button fx:id="afficherproduit" layoutX="110.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#afficherproduit" text="afficher produit" />
+      <Button fx:id="affichercommande" layoutX="248.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#affichercommande" text="afficher commande" />
+   </children>
+</AnchorPane>
