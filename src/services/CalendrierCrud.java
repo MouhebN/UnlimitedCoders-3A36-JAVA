@@ -5,8 +5,8 @@
  */
 package services;
 
-import entities.Calendrier;
-import entities.Utilisateur;
+import Entity.Calendrier;
+import Entity.Utilisateur;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import util.Connexion;
+import Utils.Connexion;
 
 /**
  *
@@ -29,8 +29,8 @@ public class CalendrierCrud {
         cnx2 = Connexion.getInstance().getCnx();
     }
 
-    public void ajouterDispo(Calendrier c) {
-        try {
+    public void ajouterDispo(Calendrier c) throws SQLException {
+      
             String requete2 = "INSERT INTO calendrier (utilisateur_id,heure_debut,heure_fin)"
                     + " VALUES (?, ?, ?)";
 
@@ -42,14 +42,12 @@ public class CalendrierCrud {
             statement.executeUpdate();
             System.out.println(" YAAY Disponibilité ajoutée");
 
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+        
     }
 
-    public List<Calendrier> afficherDispo(int utilisateurId) {
+    public List<Calendrier> afficherDispo(int utilisateurId) throws SQLException {
         List<Calendrier> myList = new ArrayList<>();
-        try {
+        
             String requete3 = "SELECT * FROM calendrier WHERE utilisateur_id=?";
             PreparedStatement statement = cnx2.prepareStatement(requete3);
             statement.setInt(1, utilisateurId);
@@ -64,14 +62,12 @@ public class CalendrierCrud {
                 cal.setMedecin(medecin);
                 myList.add(cal);
             }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+        
         return myList;
     }
 
-    public void supprimerDispo(int id) {
-        try {
+    public void supprimerDispo(int id) throws SQLException {
+        
             String requete = "DELETE FROM calendrier WHERE id=?";
             PreparedStatement pst = cnx2.prepareStatement(requete);
             pst.setInt(1, id);
@@ -81,17 +77,15 @@ public class CalendrierCrud {
             } else {
                 System.out.println("Impossible de supprimer la disponibilité");
             }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+       
     }
 
-    public void modifierDispo(int id, LocalDateTime heureDebut, LocalDateTime heureFin) {
-        try {
+    public void modifierDispo(int id, Timestamp heureDebut, Timestamp heureFin)  throws SQLException{
+        
             String requete = "UPDATE calendrier SET heure_debut=?, heure_fin=? WHERE id=?";
             PreparedStatement pst = cnx2.prepareStatement(requete);
-            pst.setTimestamp(1, Timestamp.valueOf(heureDebut));
-            pst.setTimestamp(2, Timestamp.valueOf(heureFin));
+            pst.setTimestamp(1, heureDebut);
+            pst.setTimestamp(2, heureFin);
             pst.setInt(3, id);
             int resultat = pst.executeUpdate();
             if (resultat == 1) {
@@ -99,9 +93,6 @@ public class CalendrierCrud {
             } else {
                 System.out.println("Impossible de modifier la disponibilité");
             }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
     }
 
     public List<Calendrier> getDispoByMedecinId(int medecinId) throws SQLException {
@@ -120,6 +111,19 @@ public class CalendrierCrud {
                 calendrierList.add(calendrier);
             }
             return calendrierList;
+        }
+    }
+
+    public int getDispoByDateTimeRange(Timestamp heureDebut, Timestamp heureFin) throws SQLException {
+        String query = "SELECT id FROM calendrier WHERE heure_debut = ? AND heure_fin = ?";
+        PreparedStatement statement = cnx2.prepareStatement(query);
+        statement.setTimestamp(1, heureDebut);
+        statement.setTimestamp(2, heureFin);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getInt("id");
+        } else {
+            return -1; // or throw an exception, depending on your needs
         }
     }
 

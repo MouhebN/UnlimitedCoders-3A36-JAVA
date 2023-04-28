@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.StatistiqueController">
+    <stylesheets>
+        <URL value="@statistique.css" />
+    </stylesheets>
+    <children>
+        <PieChart fx:id="piechartID" layoutX="228.0" layoutY="51.0" prefHeight="299.0" prefWidth="288.0" />
+        <AnchorPane fx:id="paneID" prefHeight="400.0" prefWidth="171.0" style="-fx-background-color: blue;" />
+      <ComboBox fx:id="timeRangeComboBox" layoutX="286.0" layoutY="14.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

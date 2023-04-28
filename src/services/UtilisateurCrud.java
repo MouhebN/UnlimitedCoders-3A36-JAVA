@@ -5,14 +5,19 @@
  */
 package services;
 
-import entities.Utilisateur;
+import Entity.RendezVous;
+import Entity.Utilisateur;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import util.Connexion;
+import Utils.Connexion;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import static services.RendezVousCrud.cnx2;
 
 /**
  *
@@ -75,4 +80,5 @@ public class UtilisateurCrud {
         }
         return null;
     }
+  
 }

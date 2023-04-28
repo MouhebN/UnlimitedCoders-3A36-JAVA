@@ -60,4 +60,7 @@
     -fx-text-fill: white;
     -fx-font-size: 16px;
 }
+#container {
+    -fx-background-color: blue;
+}
 }
